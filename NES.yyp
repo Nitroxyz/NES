@@ -34,11 +34,16 @@
   },
   "name":"NES",
   "resources":[
+    {"id":{"name":"cosmic","path":"notes/cosmic/cosmic.yy",},},
+    {"id":{"name":"sys_game","path":"objects/sys_game/sys_game.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"RoomInit","path":"rooms/RoomInit/RoomInit.yy",},},
+    {"id":{"name":"scr_procgen","path":"scripts/scr_procgen/scr_procgen.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"RoomInit","path":"rooms/RoomInit/RoomInit.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType":"game",
