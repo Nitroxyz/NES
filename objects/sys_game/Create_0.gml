@@ -16,6 +16,9 @@ global.grid_room = ds_grid_create(GRID_W, GRID_H);
 //make sure you use RoomInit or one of its children
 room_tiles = layer_tilemap_create("Tiles",0,0,ts_dummy,GRID_W,GRID_H);
 
+procgen_scanroom(spr_room_dummy, global.grid_room);
+procgen_set_tiles(global.grid_room, room_tiles);
+
 enum ROOM_TILES
 {
 	EMPTY,

@@ -40,6 +40,7 @@
     {"id":{"name":"RoomInit","path":"rooms/RoomInit/RoomInit.yy",},},
     {"id":{"name":"scr_procgen","path":"scripts/scr_procgen/scr_procgen.yy",},},
     {"id":{"name":"spr_dummy","path":"sprites/spr_dummy/spr_dummy.yy",},},
+    {"id":{"name":"spr_room_dummy","path":"sprites/spr_room_dummy/spr_room_dummy.yy",},},
     {"id":{"name":"spr_tileset_dummy","path":"sprites/spr_tileset_dummy/spr_tileset_dummy.yy",},},
     {"id":{"name":"ts_dummy","path":"tilesets/ts_dummy/ts_dummy.yy",},},
   ],
