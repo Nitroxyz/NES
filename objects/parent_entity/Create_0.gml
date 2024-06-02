@@ -11,6 +11,7 @@ team = 1;
 
 // Move function. 
 // Parameters: dx,dy relative change in grid position
+// Note that this is happening before the animation, so the characters real hitbox is already updated, while the animation is "lagging behind"
 move = function(dx, dy){
 	// Check if the position is taken up
 	
