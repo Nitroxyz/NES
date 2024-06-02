@@ -1,1 +1,0 @@
-draw_tilemap(room_tiles,0,0);
