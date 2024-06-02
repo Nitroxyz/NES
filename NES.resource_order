@@ -5,6 +5,7 @@
     {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
     {"name":"Notes","order":13,"path":"folders/Notes.yy",},
     {"name":"Objects","order":9,"path":"folders/Objects.yy",},
+    {"name":"Parents","order":5,"path":"folders/Objects/Parents.yy",},
     {"name":"Particle Systems","order":15,"path":"folders/Particle Systems.yy",},
     {"name":"Paths","order":4,"path":"folders/Paths.yy",},
     {"name":"Rooms","order":10,"path":"folders/Rooms.yy",},
@@ -17,10 +18,12 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_dummy_enemy","order":8,"path":"objects/obj_dummy_enemy/obj_dummy_enemy.yy",},
+    {"name":"obj_knight","order":7,"path":"objects/obj_knight/obj_knight.yy",},
+    {"name":"obj_mage","order":6,"path":"objects/obj_mage/obj_mage.yy",},
     {"name":"obj_wall","order":4,"path":"objects/obj_wall/obj_wall.yy",},
-    {"name":"parent_enemy","order":3,"path":"objects/parent_enemy/parent_enemy.yy",},
-    {"name":"parent_entity","order":1,"path":"objects/parent_entity/parent_entity.yy",},
-    {"name":"parent_player","order":2,"path":"objects/parent_player/parent_player.yy",},
+    {"name":"parent_entity","order":2,"path":"objects/parent_entity/parent_entity.yy",},
+    {"name":"parent_player","order":1,"path":"objects/parent_player/parent_player.yy",},
     {"name":"RoomInit","order":1,"path":"rooms/RoomInit/RoomInit.yy",},
   ],
 }

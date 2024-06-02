@@ -15,6 +15,7 @@
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Notes","folderPath":"folders/Notes.yy","name":"Notes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Parents","folderPath":"folders/Objects/Parents.yy","name":"Parents","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Particle Systems","folderPath":"folders/Particle Systems.yy","name":"Particle Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Paths","folderPath":"folders/Paths.yy","name":"Paths","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -35,6 +36,9 @@
   "name":"NES",
   "resources":[
     {"id":{"name":"cosmic","path":"notes/cosmic/cosmic.yy",},},
+    {"id":{"name":"obj_dummy_enemy","path":"objects/obj_dummy_enemy/obj_dummy_enemy.yy",},},
+    {"id":{"name":"obj_knight","path":"objects/obj_knight/obj_knight.yy",},},
+    {"id":{"name":"obj_mage","path":"objects/obj_mage/obj_mage.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"parent_enemy","path":"objects/parent_enemy/parent_enemy.yy",},},
     {"id":{"name":"parent_entity","path":"objects/parent_entity/parent_entity.yy",},},
