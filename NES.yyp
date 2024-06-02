@@ -35,6 +35,10 @@
   "name":"NES",
   "resources":[
     {"id":{"name":"cosmic","path":"notes/cosmic/cosmic.yy",},},
+    {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
+    {"id":{"name":"parent_enemy","path":"objects/parent_enemy/parent_enemy.yy",},},
+    {"id":{"name":"parent_entity","path":"objects/parent_entity/parent_entity.yy",},},
+    {"id":{"name":"parent_player","path":"objects/parent_player/parent_player.yy",},},
     {"id":{"name":"sys_game","path":"objects/sys_game/sys_game.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"RoomInit","path":"rooms/RoomInit/RoomInit.yy",},},

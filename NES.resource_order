@@ -17,6 +17,10 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_wall","order":4,"path":"objects/obj_wall/obj_wall.yy",},
+    {"name":"parent_enemy","order":3,"path":"objects/parent_enemy/parent_enemy.yy",},
+    {"name":"parent_entity","order":1,"path":"objects/parent_entity/parent_entity.yy",},
+    {"name":"parent_player","order":2,"path":"objects/parent_player/parent_player.yy",},
     {"name":"RoomInit","order":1,"path":"rooms/RoomInit/RoomInit.yy",},
   ],
 }
