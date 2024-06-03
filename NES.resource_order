@@ -25,5 +25,8 @@
     {"name":"parent_entity","order":2,"path":"objects/parent_entity/parent_entity.yy",},
     {"name":"parent_player","order":1,"path":"objects/parent_player/parent_player.yy",},
     {"name":"RoomInit","order":1,"path":"rooms/RoomInit/RoomInit.yy",},
+    {"name":"spr_minimap","order":3,"path":"sprites/spr_minimap/spr_minimap.yy",},
+    {"name":"spr_room_dummy","order":2,"path":"sprites/spr_room_dummy/spr_room_dummy.yy",},
+    {"name":"spr_tileset_dummy","order":1,"path":"sprites/spr_tileset_dummy/spr_tileset_dummy.yy",},
   ],
 }
