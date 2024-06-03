@@ -41,3 +41,40 @@ function procgen_set_tiles(_grid, _tiles)
 		}
 	}
 }
+
+function procgen_layout_create(_floorgrid)
+{
+	//make grid for each room
+	
+	for (var _yy = 0; _yy < ds_grid_width(_floorgrid); _yy++) //not sure why I'd ever use a different variable for the floor grid but whatever.
+	{
+		for (var _xx = 0; _xx < ds_grid_height(_floorgrid); _xx++)
+		{
+			global.grid_room[_xx][_yy] = ds_grid_create(GRID_W, GRID_H);	
+		}
+	}
+	
+	//put the starting room in a random place.
+	
+	global.room_x = irandom_range(0,ds_grid_width(_floorgrid));
+	global.room_y = irandom_range(0,ds_grid_height(_floorgrid));
+	
+	var _startroom_x = global.room_x;
+	var _startroom_y = global.room_y;
+	
+	ds_grid_set(_floorgrid, _startroom_x,_startroom_y,ROOM_ENTRANCES.NESW);
+	
+	//place the boss room in a random place
+	var _endroom_x;
+	var _endroom_y;
+	
+	do
+	{
+		_endroom_x = irandom_range(0,ds_grid_width(_floorgrid));
+		_endroom_y = irandom_range(0,ds_grid_height(_floorgrid));
+	}
+	until(ds_grid_get(_floorgrid, _endroom_x, _endroom_y) == 0)
+	
+	ds_grid_set(_floorgrid, _endroom_x, _endroom_y, ROOM_ENTRANCES.NESW);
+	
+}
