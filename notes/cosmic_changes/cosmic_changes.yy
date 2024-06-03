@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"cosmic_changes",
+  "name":"cosmic_changes",
+  "parent":{
+    "name":"Notes",
+    "path":"folders/Notes.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}
