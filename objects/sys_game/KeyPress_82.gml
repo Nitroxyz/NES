@@ -1,0 +1,1 @@
+game_restart();//only works on windows for some reason

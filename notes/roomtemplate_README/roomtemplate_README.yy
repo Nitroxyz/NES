@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"roomtemplate_README",
+  "name":"roomtemplate_README",
+  "parent":{
+    "name":"room_gen",
+    "path":"folders/Sprites/room_gen.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}
