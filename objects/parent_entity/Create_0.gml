@@ -90,4 +90,9 @@
 			turn_invincibility = true;
 		}
 	}
+	
+	// 
+	dying = function(){
+		
+	}
 #endregion
