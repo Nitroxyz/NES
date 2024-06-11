@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"parent_player",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"parent_player",
   "overriddenProperties":[],
@@ -10,8 +12,8 @@
     "path":"folders/Objects/Parents.yy",
   },
   "parentObjectId":{
-    "name":"parent_enemy",
-    "path":"objects/parent_enemy/parent_enemy.yy",
+    "name":"parent_entity",
+    "path":"objects/parent_entity/parent_entity.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

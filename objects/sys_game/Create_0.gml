@@ -92,3 +92,12 @@ enum ROOM_TILES
 	WALL	
 	//will probably add more later (destructible wall, lava, water, etc)
 }
+
+/* states
+0 = neutral
+1 = animation 1 active
+2 = animation 1 complete; advance to enemy turn
+3 = animation 2+ active
+4 = animation 2+ complete; reset to neutral
+*/
+state = 0;

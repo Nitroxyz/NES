@@ -13,3 +13,34 @@ if (mouse_check_button_pressed(mb_left))
 	
 	tilemap_set(room_tiles, ds_grid_get(global.grid_room[0][0], _mouse_grid_x, _mouse_grid_y), _mouse_grid_x, _mouse_grid_y);
 }
+
+#region Major turn handling
+	/* Player turn
+	Start with checking player input, when yes:
+	- fast forward
+	- do player turn
+	- update grid
+	- do universal collision event 
+	- update grid
+	*/
+	
+	/* enemy turn
+	when stage == 2, do enemy turn
+	update grid
+	do universal collision event (keep in mind that enemies cannot take damage here, usually)
+	update grid
+	*/
+	
+	/* Animation 
+		During freeze:
+		- Advance all active animations by 1
+		- Freeze all inactive/done animations
+		- When all animations are done, unfreeze and advance stage
+	*/
+	
+	/* enemy turn
+	when stage == 2, do enemy turn
+	do universal collision event
+	*/
+	
+#endregion

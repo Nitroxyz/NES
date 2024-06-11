@@ -1,5 +1,6 @@
 
-// Relative position on the grid
+// Relative position on the grid.
+// Note that during animations you arent on it
 grid_x = 0;
 grid_y = 0;
 
@@ -8,6 +9,9 @@ state = 0;
 
 // Player is 0, enemies are 1. Opposing teams hurt each other
 team = 1;
+
+// Prevents multiple hits in one turn
+turn_invincibility = false;
 
 // Move function. 
 // Parameters: dx,dy relative change in grid position
@@ -28,3 +32,18 @@ collision_event = function(){
 	
 }
 
+// Plays the default animation
+draw_default = function(){
+}
+
+// Plays the default frozen animation
+draw_freeze = function(){
+}
+
+// Play a custom action animation
+draw_action = fucntion(){
+}
+
+// Forcefully snaps you to the grid position you belong on
+snap_grid = function(){
+}
