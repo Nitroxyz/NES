@@ -13,8 +13,8 @@
   ],
   "name":"Room1",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"NES",
+    "path":"NES.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{
