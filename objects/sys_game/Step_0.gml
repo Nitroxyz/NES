@@ -31,16 +31,15 @@ if (mouse_check_button_pressed(mb_left))
 	update grid
 	*/
 	
-	/* Animation 
-		During freeze:
-		- Advance all active animations by 1
-		- Freeze all inactive/done animations
-		- When all animations are done, unfreeze and advance stage
-	*/
-	
 	/* enemy turn
 	when stage == 2, do enemy turn
 	do universal collision event
 	*/
 	
+	/* Animation 
+		During freeze:
+		- Advance all active animations by 1
+		- Freeze all inactive/done animations
+		- When all animations are done, unfreeze and advance stage
+	*/	
 #endregion

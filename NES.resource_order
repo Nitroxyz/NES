@@ -3,6 +3,8 @@
     {"name":"Players","order":1,"path":"folders/Sprites/Players.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_death","order":1,"path":"objects/obj_death/obj_death.yy",},
+    {"name":"parent_projectile","order":1,"path":"objects/parent_projectile/parent_projectile.yy",},
     {"name":"sys_grid","order":1,"path":"objects/sys_grid/sys_grid.yy",},
     {"name":"spr_knight","order":1,"path":"sprites/spr_knight/spr_knight.yy",},
   ],
