@@ -13,6 +13,7 @@ global.grid_floor = ds_grid_create(6,6); //this grid contains the entrances and 
 
 global.entrance_map = ds_map_create();
 //makes it easier to create floor
+ds_map_add(global.entrance_map, "", ROOM_ENTRANCES.EMPTY);
 ds_map_add(global.entrance_map, "NESW", ROOM_ENTRANCES.NESW);
 ds_map_add(global.entrance_map, "ES", ROOM_ENTRANCES.ES);
 ds_map_add(global.entrance_map, "ESW", ROOM_ENTRANCES.ESW);
@@ -20,19 +21,15 @@ ds_map_add(global.entrance_map, "SW", ROOM_ENTRANCES.SW);
 ds_map_add(global.entrance_map, "S", ROOM_ENTRANCES.S);
 ds_map_add(global.entrance_map, "NES", ROOM_ENTRANCES.NES);
 ds_map_add(global.entrance_map, "NSW", ROOM_ENTRANCES.NSW);
-
-/*
-	NSW,
-	NS,
-	NE,
-	NEW,
-	NW,
-	N,
-	E,
-	EW,
-	W,
-*/
-
+ds_map_add(global.entrance_map, "NS", ROOM_ENTRANCES.NS);
+ds_map_add(global.entrance_map, "NE", ROOM_ENTRANCES.NE);
+ds_map_add(global.entrance_map, "NEW", ROOM_ENTRANCES.NEW);
+ds_map_add(global.entrance_map, "NW", ROOM_ENTRANCES.NW);
+ds_map_add(global.entrance_map, "N", ROOM_ENTRANCES.N);
+ds_map_add(global.entrance_map, "E", ROOM_ENTRANCES.E);
+ds_map_add(global.entrance_map, "EW", ROOM_ENTRANCES.EW);
+ds_map_add(global.entrance_map, "W", ROOM_ENTRANCES.W);
+//I don't know if there's an easier way to do this.
 
 //these variables are set in procgen
 

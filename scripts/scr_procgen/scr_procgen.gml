@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function procgen_scanroom(_sprite, _grid_destination, _entrances, _roomtype){
+function procgen_scanroom(_sprite, _grid_destination, _row, _column){
 	/*
 		draw sprite to a surface
 
@@ -18,11 +18,10 @@ function procgen_scanroom(_sprite, _grid_destination, _entrances, _roomtype){
 	
 	surface_reset_target()
 	
-	//for 
 	
-	for (var _yy = 0; _yy < GRID_H; _yy++)
+	for (var _yy = (_row-1)*GRID_H; _yy < _row*GRID_H; _yy++)
 	{
-		for (var _xx = 0; _xx < GRID_W; _xx++)
+		for (var _xx = (_column-1)*GRID_W; _xx < _column*GRID_W; _xx++)
 		{
 			if (surface_getpixel(_room_surf,_xx,_yy) == c_white)
 			{
@@ -246,6 +245,10 @@ function procgen_set_entrances(_floorgrid)
 	{
 		for(var _xx = 0; _xx < ds_grid_width(_floorgrid); _xx++)
 		{
+			if (ds_grid_get(_floorgrid, _xx, _yy) == ROOM_ENTRANCES.EMPTY)
+			{
+				continue;	
+			}
 			//check each block around the room in question
 			var _north = procgen_get_room(_floorgrid, _xx, _yy-1);
 			var _east = procgen_get_room(_floorgrid, _xx+1, _yy);
@@ -253,11 +256,28 @@ function procgen_set_entrances(_floorgrid)
 			var _west = procgen_get_room(_floorgrid, _xx-1, _yy);
 			
 			
+			var _key = "";
+			
 			//change the entrances
+			if (_north)
+			{
+				_key = string_concat(_key, "N");
+			}
+			if (_east)
+			{
+				_key = string_concat(_key, "E");
+			}
+			if (_south)
+			{
+				_key = string_concat(_key, "S");
+			}
+			if (_west)
+			{
+				_key = string_concat(_key, "W");
+			}
 			
-			
-			
-			
+			//set the room
+			ds_grid_set(_floorgrid, _xx, _yy, ds_map_find_value(global.entrance_map, _key)); 
 			
 		}
 	}
@@ -277,4 +297,15 @@ function procgen_get_room(_floorgrid, _x, _y)
 	{
 		return false;
 	}
+}
+
+function procgen_room_create(_floorgrid, _roomgrid)
+{
+	
+}
+
+//determines what rooms in the spr_rooms sprite have things in them
+function procgen_template_values(_sprite,_list)
+{
+	
 }
