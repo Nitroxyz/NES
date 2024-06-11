@@ -62,8 +62,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"room_gen",
+    "path":"folders/Sprites/room_gen.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
