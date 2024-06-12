@@ -8,10 +8,16 @@ function procgen_scanroom(_sprite, _grid_destination, _row, _column){
 
 		dispose of the surface
 	*/
+	if (_row == 0 or _column == 0)
+	{
+		exit;
+	}
 	
-	
-	var _room_surf = surface_create(SCREEN_W, SCREEN_H);
-	surface_set_target(_room_surf);
+	if !surface_exists(global.scanning_surface)
+	{
+		global.scanning_surface = surface_create(SCREEN_W, SCREEN_H);
+	}
+	surface_set_target(global.scanning_surface);
 	
 	draw_clear_alpha(0,0);
 	draw_sprite(_sprite,0,0,0);
@@ -23,9 +29,9 @@ function procgen_scanroom(_sprite, _grid_destination, _row, _column){
 	{
 		for (var _xx = (_column-1)*GRID_W; _xx < _column*GRID_W; _xx++)
 		{
-			if (surface_getpixel(_room_surf,_xx,_yy) == c_white)
+			if (surface_getpixel(global.scanning_surface,_xx,_yy) == c_white)//this function is soooooo slow
 			{
-				ds_grid_set(_grid_destination, _xx, _yy,  1);
+				ds_grid_set(_grid_destination, _xx-(_column-1)*GRID_W, _yy-(_row-1)*GRID_H,  1);
 			}
 		}
 	}
@@ -216,7 +222,8 @@ function procgen_layout_create(_floorgrid)
 	
 	//okay, NOW what we do is we make doors that go to nothing into walls.
 	procgen_set_entrances(_floorgrid);
-	
+	procgen_rooms_create(_floorgrid);
+	//now we set the rooms to be like thier 
 	//end of procgen layout
 }
 
@@ -299,13 +306,20 @@ function procgen_get_room(_floorgrid, _x, _y)
 	}
 }
 
-function procgen_room_create(_floorgrid, _roomgrid)
+function procgen_rooms_create(_floorgrid)
 {
-	
-}
-
-//determines what rooms in the spr_rooms sprite have things in them
-function procgen_template_values(_sprite,_list)
-{
-	
+	for (var _yy = 0; _yy < ds_grid_height(_floorgrid); _yy++)
+	{
+		for (var _xx = 0; _xx < ds_grid_width(_floorgrid); _xx++)
+		{
+			if (ds_grid_get(_floorgrid, _xx, _yy) != ROOM_ENTRANCES.EMPTY)//should significantly increase performance
+			{
+				//creates exits/entrances
+				procgen_scanroom(spr_rooms, global.grid_room[_xx][_yy], 1, ds_grid_get(_floorgrid, _xx, _yy));
+			
+				//places layouts
+				procgen_scanroom(spr_rooms, global.grid_room[_xx][_yy], irandom_range(2,5), irandom_range(1,15));
+			}
+		}
+	}
 }

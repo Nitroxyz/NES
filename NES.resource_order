@@ -2,5 +2,6 @@
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
     {"name":"sys_grid","order":1,"path":"objects/sys_grid/sys_grid.yy",},
+    {"name":"spr_compass","order":1,"path":"sprites/spr_compass/spr_compass.yy",},
   ],
 }

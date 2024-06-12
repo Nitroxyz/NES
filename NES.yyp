@@ -52,6 +52,7 @@
     {"id":{"name":"sys_grid","path":"objects/sys_grid/sys_grid.yy",},},
     {"id":{"name":"RoomInit","path":"rooms/RoomInit/RoomInit.yy",},},
     {"id":{"name":"scr_procgen","path":"scripts/scr_procgen/scr_procgen.yy",},},
+    {"id":{"name":"spr_compass","path":"sprites/spr_compass/spr_compass.yy",},},
     {"id":{"name":"spr_dummy","path":"sprites/spr_dummy/spr_dummy.yy",},},
     {"id":{"name":"spr_minimap","path":"sprites/spr_minimap/spr_minimap.yy",},},
     {"id":{"name":"spr_room_dummy","path":"sprites/spr_room_dummy/spr_room_dummy.yy",},},
