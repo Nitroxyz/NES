@@ -109,7 +109,7 @@ function procgen_layout_create(_floorgrid)
 	var _branch_count = 0;
 	while ((_xcrawl != _endroom_x) or (_ycrawl != _endroom_y)) //this is a bad idea but fuck it
 	{ //it was, in fact, a bad idea but I got it to work anyways.
-		var _coin = irandom(1);
+		_coin = irandom(1);
 		if (_coin)
 		{
 			_xcrawl += sign(_endroom_x - _xcrawl);
@@ -141,20 +141,23 @@ function procgen_layout_create(_floorgrid)
 		if (irandom(99) <= 35) {_dead = true;}
 		
 		//this thing makes a bunch of offshoots from the main path
-
+	
+		var _xTo = -1;
+		var _yTo = -1;
+		
 		while (_dead == false) and (_branch_count < 6)
 		{
 			var _iteration = 0;
 			do
 			{
-				var _xTo = 0;
-				var _yTo = 0;
-				var _branch_on_grid = true;
+				_xTo = 0;
+				_yTo = 0;
+				_branch_on_grid = true;
 				
-				var _coin = irandom(1);
+				_coin = irandom(1);
 				if (_coin)
 				{
-					var _xTo = 0;
+					_xTo = 0;
 					_coin = irandom(1);
 					if _coin
 					{
@@ -168,7 +171,7 @@ function procgen_layout_create(_floorgrid)
 				else
 				{
 					_coin = irandom(1);//are you as tired of flipping coins as I am?
-					var _yTo = 0;
+					_yTo = 0;
 					_coin = irandom(1);
 					if _coin
 					{
