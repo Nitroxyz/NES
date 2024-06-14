@@ -3,3 +3,4 @@
 
 set_death_sprite = function(sprite){
 	sprite_index = sprite;
+}

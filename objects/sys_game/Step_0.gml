@@ -1,3 +1,10 @@
+#region input detection system
+	input_bible =
+	{
+		
+	}
+#endregion
+
 var _mouse_grid_x = floor(mouse_x/16);
 var _mouse_grid_y = floor(mouse_y/16);
 
@@ -31,15 +38,15 @@ if (mouse_check_button_pressed(mb_left))
 	update grid
 	*/
 	
-	/* enemy turn
-	when stage == 2, do enemy turn
-	do universal collision event
-	*/
-	
 	/* Animation 
 		During freeze:
 		- Advance all active animations by 1
 		- Freeze all inactive/done animations
 		- When all animations are done, unfreeze and advance stage
+		if(ds_list_size(global.busy_anims) == 0){
+			with(all){
+				unfreeze();
+			}
+		}
 	*/	
 #endregion

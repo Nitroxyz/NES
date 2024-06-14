@@ -63,6 +63,7 @@
 
 	// Plays the default frozen animation
 	draw_freeze = function(){
+		image_speed = 0;
 	}
 
 	// Set up the action animation
@@ -91,7 +92,7 @@
 		}
 	}
 	
-	// 
+	// x_x
 	dying = function(){
 		
 	}
