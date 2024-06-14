@@ -28,11 +28,11 @@ global.busy_anims = ds_list_create();
 surface_resize(application_surface, SCREEN_W, SCREEN_H); //makes sure that pixels are perfectly aligned
 //(except when drawing GUI for some reason)
 
-//input_bible =
+input_bible = {};
 
 #region room stuff
-global.scanning_surface = -1; 
-  global.grid_floor = ds_grid_create(FLOOR_W,FLOOR_H); //this grid contains the entrances and exits of every room, or if a room is empty
+	global.scanning_surface = -1; 
+	global.grid_floor = ds_grid_create(FLOOR_W,FLOOR_H); //this grid contains the entrances and exits of every room, or if a room is empty
 
 	global.entrance_map = ds_map_create();
 	//makes it easier to create floor
