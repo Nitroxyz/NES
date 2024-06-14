@@ -1,35 +1,21 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function procgen_scanroom(_sprite, _grid_destination, _row, _column){
-	/*
-		draw sprite to a surface
 
-		surface_getpixel(surface_id, x, y);
-
-		dispose of the surface
-	*/
 	if (_row == 0 or _column == 0)
 	{
 		exit;
 	}
-	
-	if !surface_exists(global.scanning_surface)
-	{
-		global.scanning_surface = surface_create(SCREEN_W, SCREEN_H);
-	}
-	surface_set_target(global.scanning_surface);
-	
-	draw_clear_alpha(0,0);
-	draw_sprite(_sprite,0,0,0);
-	
-	surface_reset_target()
 	
 	
 	for (var _yy = (_row-1)*GRID_H; _yy < _row*GRID_H; _yy++)
 	{
 		for (var _xx = (_column-1)*GRID_W; _xx < _column*GRID_W; _xx++)
 		{
-			if (surface_getpixel(global.scanning_surface,_xx,_yy) == c_white)//this function is soooooo slow
+			var _clr = sprite_getpixel(_sprite, 0, _xx, _yy);
+						
+			if (_clr[0] >= 255 and _clr[1] >= 255 and _clr[2] >= 255)//checks whether color is white.
+			//this function is fast now :3
 			{
 				ds_grid_set(_grid_destination, _xx-(_column-1)*GRID_W, _yy-(_row-1)*GRID_H,  1);
 			}
