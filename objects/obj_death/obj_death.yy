@@ -1,20 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"parent_player",
+  "%Name":"obj_death",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"parent_player",
+  "name":"obj_death",
   "overriddenProperties":[],
   "parent":{
-    "name":"Parents",
-    "path":"folders/Objects/Parents.yy",
+    "name":"Entities",
+    "path":"folders/Objects/Entities.yy",
   },
-  "parentObjectId":{
-    "name":"parent_entity",
-    "path":"objects/parent_entity/parent_entity.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

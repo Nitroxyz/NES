@@ -1,0 +1,2 @@
+/// @desc Animation rule handling
+

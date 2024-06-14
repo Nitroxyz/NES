@@ -1,14 +1,19 @@
 {
   "FolderOrderSettings":[
+
     {"name":"SpriteData","order":1,"path":"folders/Scripts/SpriteData.yy",},
     {"name":"Internal","order":1,"path":"folders/Scripts/SpriteData/Internal.yy",},
+
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_death","order":1,"path":"objects/obj_death/obj_death.yy",},
+    {"name":"parent_projectile","order":1,"path":"objects/parent_projectile/parent_projectile.yy",},
     {"name":"sys_grid","order":1,"path":"objects/sys_grid/sys_grid.yy",},
     {"name":"Documentation","order":2,"path":"scripts/Documentation/Documentation.yy",},
     {"name":"sprite_data_end","order":1,"path":"scripts/sprite_data_end/sprite_data_end.yy",},
     {"name":"sprite_getpixel","order":3,"path":"scripts/sprite_getpixel/sprite_getpixel.yy",},
     {"name":"sprite_pragma","order":2,"path":"scripts/sprite_pragma/sprite_pragma.yy",},
     {"name":"spr_compass","order":1,"path":"sprites/spr_compass/spr_compass.yy",},
+
   ],
 }
