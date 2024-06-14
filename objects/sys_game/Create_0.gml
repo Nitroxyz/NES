@@ -6,7 +6,10 @@
 	#macro GRID_H 13
 
 	#macro TILE_W 16
+  #macro FLOOR_W 6
+  #macro FLOOR_H 6
 #endregion
+
 
 randomize();
 
@@ -28,7 +31,8 @@ surface_resize(application_surface, SCREEN_W, SCREEN_H); //makes sure that pixel
 //input_bible =
 
 #region room stuff
-	global.grid_floor = ds_grid_create(6,6); //this grid contains the entrances and exits of every room, or if a room is empty
+global.scanning_surface = -1; 
+  global.grid_floor = ds_grid_create(FLOOR_W,FLOOR_H); //this grid contains the entrances and exits of every room, or if a room is empty
 
 	global.entrance_map = ds_map_create();
 	//makes it easier to create floor
@@ -108,10 +112,26 @@ surface_resize(application_surface, SCREEN_W, SCREEN_H); //makes sure that pixel
 
 
 #region system functions
-	function room_switch(_x, _y)
+function room_switch(_x, _y, _direction = "null")
+{
+	switch (_direction)
 	{
-		//change rooms, scan the tiles, switch player position
+		//add player position teleporting here.
+		case "north":
+		break;
+		case "east":
+		break;
+		case "south":
+		break;
+		case "west":
+		break;
+		
 	}
+	//sets the tilemap to match the current room.
+	global.room_x = _x;
+	global.room_y = _y;
+	procgen_set_tiles(global.grid_room[_x][_y],room_tiles);
+}
 	
 	// player turn
 	player_turn = function(){
@@ -137,3 +157,5 @@ surface_resize(application_surface, SCREEN_W, SCREEN_H); //makes sure that pixel
 		}
 	}
 #endregion
+
+room_switch(global.room_x, global.room_y);

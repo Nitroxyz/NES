@@ -17,3 +17,5 @@ for(var _yy = 0; _yy < ds_grid_height(global.grid_floor); _yy++)
 		}
 	}
 }
+
+draw_sprite(spr_compass,0, 16 + (global.room_x*8), 24 + (global.room_y*8));

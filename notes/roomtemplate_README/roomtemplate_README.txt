@@ -10,4 +10,8 @@ that the all the stuff in the rooms won't block any exits.
 
 the bottom three rows are reserved for shops, treasure, and boss rooms, respectively.
 
-in case it won't be obvious, the key won't be read by the game, and rooms with nothing in them also won't be read. 
+in case it won't be obvious, the key won't be read by the game.
+rooms with letters are placeholders.
+
+
+The scanning process is really, really, slow.

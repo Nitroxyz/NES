@@ -1,31 +1,23 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function procgen_scanroom(_sprite, _grid_destination, _row, _column){
-	/*
-		draw sprite to a surface
 
-		surface_getpixel(surface_id, x, y);
-
-		dispose of the surface
-	*/
-	
-	
-	var _room_surf = surface_create(SCREEN_W, SCREEN_H);
-	surface_set_target(_room_surf);
-	
-	draw_clear_alpha(0,0);
-	draw_sprite(_sprite,0,0,0);
-	
-	surface_reset_target()
+	if (_row == 0 or _column == 0)
+	{
+		exit;
+	}
 	
 	
 	for (var _yy = (_row-1)*GRID_H; _yy < _row*GRID_H; _yy++)
 	{
 		for (var _xx = (_column-1)*GRID_W; _xx < _column*GRID_W; _xx++)
 		{
-			if (surface_getpixel(_room_surf,_xx,_yy) == c_white)
+			var _clr = sprite_getpixel(_sprite, 0, _xx, _yy);
+						
+			if (_clr[0] >= 255 and _clr[1] >= 255 and _clr[2] >= 255)//checks whether color is white.
+			//this function is fast now :3
 			{
-				ds_grid_set(_grid_destination, _xx, _yy,  1);
+				ds_grid_set(_grid_destination, _xx-(_column-1)*GRID_W, _yy-(_row-1)*GRID_H,  1);
 			}
 		}
 	}
@@ -117,7 +109,7 @@ function procgen_layout_create(_floorgrid)
 	var _branch_count = 0;
 	while ((_xcrawl != _endroom_x) or (_ycrawl != _endroom_y)) //this is a bad idea but fuck it
 	{ //it was, in fact, a bad idea but I got it to work anyways.
-		var _coin = irandom(1);
+		_coin = irandom(1);
 		if (_coin)
 		{
 			_xcrawl += sign(_endroom_x - _xcrawl);
@@ -149,20 +141,23 @@ function procgen_layout_create(_floorgrid)
 		if (irandom(99) <= 35) {_dead = true;}
 		
 		//this thing makes a bunch of offshoots from the main path
-
+	
+		var _xTo = -1;
+		var _yTo = -1;
+		
 		while (_dead == false) and (_branch_count < 6)
 		{
 			var _iteration = 0;
 			do
 			{
-				var _xTo = 0;
-				var _yTo = 0;
-				var _branch_on_grid = true;
+				_xTo = 0;
+				_yTo = 0;
+				_branch_on_grid = true;
 				
-				var _coin = irandom(1);
+				_coin = irandom(1);
 				if (_coin)
 				{
-					var _xTo = 0;
+					_xTo = 0;
 					_coin = irandom(1);
 					if _coin
 					{
@@ -176,7 +171,7 @@ function procgen_layout_create(_floorgrid)
 				else
 				{
 					_coin = irandom(1);//are you as tired of flipping coins as I am?
-					var _yTo = 0;
+					_yTo = 0;
 					_coin = irandom(1);
 					if _coin
 					{
@@ -216,7 +211,8 @@ function procgen_layout_create(_floorgrid)
 	
 	//okay, NOW what we do is we make doors that go to nothing into walls.
 	procgen_set_entrances(_floorgrid);
-	
+	procgen_rooms_create(_floorgrid);
+	//now we set the rooms to be like thier 
 	//end of procgen layout
 }
 
@@ -299,13 +295,20 @@ function procgen_get_room(_floorgrid, _x, _y)
 	}
 }
 
-function procgen_room_create(_floorgrid, _roomgrid)
+function procgen_rooms_create(_floorgrid)
 {
-	
-}
-
-//determines what rooms in the spr_rooms sprite have things in them
-function procgen_template_values(_sprite,_list)
-{
-	
+	for (var _yy = 0; _yy < ds_grid_height(_floorgrid); _yy++)
+	{
+		for (var _xx = 0; _xx < ds_grid_width(_floorgrid); _xx++)
+		{
+			if (ds_grid_get(_floorgrid, _xx, _yy) != ROOM_ENTRANCES.EMPTY)//should significantly increase performance
+			{
+				//creates exits/entrances
+				procgen_scanroom(spr_rooms, global.grid_room[_xx][_yy], 1, ds_grid_get(_floorgrid, _xx, _yy));
+			
+				//places layouts
+				procgen_scanroom(spr_rooms, global.grid_room[_xx][_yy], irandom_range(2,5), irandom_range(1,15));
+			}
+		}
+	}
 }

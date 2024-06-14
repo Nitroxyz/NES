@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Documentation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Documentation",
+  "parent":{
+    "name":"SpriteData",
+    "path":"folders/Scripts/SpriteData.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
