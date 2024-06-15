@@ -6,8 +6,8 @@
 	#macro GRID_H 13
 
 	#macro TILE_W 16
-  #macro FLOOR_W 6
-  #macro FLOOR_H 6
+	#macro FLOOR_W 6
+	#macro FLOOR_H 6
 #endregion
 
 
@@ -67,9 +67,7 @@ input_bible = {};
 	procgen_layout_create(global.grid_floor);
 
 	//make sure you use RoomInit or one of its children
-	room_tiles = layer_tilemap_create("Tiles",0,0,ts_dummy,GRID_W,GRID_H);
-
-	procgen_set_tiles(global.grid_room[global.room_x][global.room_y], room_tiles);
+	room_tiles = layer_tilemap_create("Tiles",0,0,ts_tileset,GRID_W,GRID_H);
 
 	enum ROOM_ENTRANCES
 	{

@@ -30,7 +30,15 @@ function procgen_set_tiles(_grid, _tiles)
 	{
 		for (var _xx = 0; _xx < GRID_W; _xx++)
 		{
-			tilemap_set(_tiles, ds_grid_get(_grid, _xx,_yy), _xx, _yy);
+			if (ds_grid_get(_grid, _xx, _yy) == ROOM_TILES.WALL)
+			{
+				scr_autotile(_grid, _tiles, _xx, _yy);
+			}
+			else
+			{
+				tilemap_set(_tiles, 0, _xx, _yy);
+			}
+			//tilemap_autotile(_tiles, _xx, _yy, ds_grid_get(_grid, _xx, _yy) == ROOM_TILES.WALL, true);
 		}
 	}
 	//end of set tiles
