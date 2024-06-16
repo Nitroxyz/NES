@@ -17,7 +17,19 @@ function procgen_scanroom(_sprite, _grid_destination, _row, _column){
 			if (_clr[0] >= 255 and _clr[1] >= 255 and _clr[2] >= 255)//checks whether color is white.
 			//this function is fast now :3
 			{
-				ds_grid_set(_grid_destination, _xx-(_column-1)*GRID_W, _yy-(_row-1)*GRID_H,  1);
+				ds_grid_set(_grid_destination, _xx-(_column-1)*GRID_W, _yy-(_row-1)*GRID_H,  ROOM_TILES.WALL);
+			}
+			if (_clr[0] == 248 and _clr[1] == 148 and _clr[2] == 29)//Table
+			{
+				ds_grid_set(_grid_destination, _xx-(_column-1)*GRID_W, _yy-(_row-1)*GRID_H,  ROOM_TILES.TABLE);	
+			}
+			if (_clr[0] == 0 and _clr[1] == 0 and _clr[2] == 255)//ChairL
+			{
+				ds_grid_set(_grid_destination, _xx-(_column-1)*GRID_W, _yy-(_row-1)*GRID_H,  ROOM_TILES.CHAIR_L);	
+			}
+			if (_clr[0] == 255 and _clr[1] == 0 and _clr[2] == 255)//ChairR
+			{
+				ds_grid_set(_grid_destination, _xx-(_column-1)*GRID_W, _yy-(_row-1)*GRID_H,  ROOM_TILES.CHAIR_R);	
 			}
 		}
 	}
@@ -30,9 +42,14 @@ function procgen_set_tiles(_grid, _tiles)
 	{
 		for (var _xx = 0; _xx < GRID_W; _xx++)
 		{
-			if (ds_grid_get(_grid, _xx, _yy) == ROOM_TILES.WALL)
+			var _tile = ds_grid_get(_grid, _xx, _yy);
+			if (_tile == ROOM_TILES.WALL)
 			{
 				scr_autotile(_grid, _tiles, _xx, _yy);
+			}
+			else if (_tile != 0)
+			{
+				tilemap_set(_tiles, _tile, _xx, _yy)
 			}
 			else
 			{
@@ -315,7 +332,7 @@ function procgen_rooms_create(_floorgrid)
 				procgen_scanroom(spr_rooms, global.grid_room[_xx][_yy], 1, ds_grid_get(_floorgrid, _xx, _yy));
 			
 				//places layouts
-				procgen_scanroom(spr_rooms, global.grid_room[_xx][_yy], irandom_range(2,5), irandom_range(1,15));
+				procgen_scanroom(spr_rooms, global.grid_room[_xx][_yy], 2, irandom_range(1,15));
 			}
 		}
 	}

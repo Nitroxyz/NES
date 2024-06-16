@@ -102,7 +102,11 @@ input_bible = {};
 	enum ROOM_TILES
 	{
 		EMPTY,
-		WALL	
+		WALL,
+		TABLE = 51,
+		CHAIR_L = 50,
+		CHAIR_R = 52,
+		
 		//will probably add more later (destructible wall, lava, water, etc)
 	}
 #endregion

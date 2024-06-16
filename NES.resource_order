@@ -2,6 +2,7 @@
   "FolderOrderSettings":[
     {"name":"SpriteData","order":1,"path":"folders/Scripts/SpriteData.yy",},
     {"name":"Internal","order":1,"path":"folders/Scripts/SpriteData/Internal.yy",},
+    {"name":"UI","order":3,"path":"folders/Sprites/UI.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_death","order":1,"path":"objects/obj_death/obj_death.yy",},
@@ -12,8 +13,11 @@
     {"name":"sprite_data_end","order":1,"path":"scripts/sprite_data_end/sprite_data_end.yy",},
     {"name":"sprite_getpixel","order":3,"path":"scripts/sprite_getpixel/sprite_getpixel.yy",},
     {"name":"sprite_pragma","order":2,"path":"scripts/sprite_pragma/sprite_pragma.yy",},
-    {"name":"spr_compass","order":1,"path":"sprites/spr_compass/spr_compass.yy",},
+    {"name":"spr_minimap","order":1,"path":"sprites/spr_minimap/spr_minimap.yy",},
     {"name":"spr_tileset","order":1,"path":"sprites/spr_tileset/spr_tileset.yy",},
+    {"name":"spr_UI_cursor","order":4,"path":"sprites/spr_UI_cursor/spr_UI_cursor.yy",},
+    {"name":"spr_UI_frame","order":2,"path":"sprites/spr_UI_frame/spr_UI_frame.yy",},
+    {"name":"spr_UI_icons","order":3,"path":"sprites/spr_UI_icons/spr_UI_icons.yy",},
     {"name":"ts_tileset","order":1,"path":"tilesets/ts_tileset/ts_tileset.yy",},
   ],
 }
