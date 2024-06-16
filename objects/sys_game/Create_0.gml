@@ -57,14 +57,15 @@ input_bible = {};
 	//these variables are set in procgen
 
 	//2d arrays:
-	global.grid_room[6][6] = 0; //The tile grid of the current room
+	global.grid_room[0][0] = ds_grid_create(GRID_W,GRID_H); //The tile grid of the current room
 	global.type_room[6][6] = 0;//The type of the current room (normal, boss, treasure, or shop)
 
-	global.room_x = -1;//coordinates of current room
-	global.room_y = -1;//^^
+	global.room_x = 0;//coordinates of current room
+	global.room_y = 0;//^^
 
 	//generate floor layout
-	procgen_layout_create(global.grid_floor);
+	//procgen_layout_create(global.grid_floor); //I WILL REMEMBER YOU... WILL YOU REMEMBER ME...
+	procgen_scanroom(spr_rooms, global.grid_room[0][0],2,1);
 
 	//make sure you use RoomInit or one of its children
 	room_tiles = layer_tilemap_create("Tiles",0,0,ts_tileset,GRID_W,GRID_H);
@@ -137,12 +138,24 @@ function room_switch(_x, _y, _direction = "null")
 	
 	// player turn
 	player_turn = function(){
-		
+		if instance_exists(parent_player)
+		{
+			with parent_player
+			{
+				event_user(0);
+			}
+		}
 	}
 	
 	// enemy turns
 	enemy_turn = function(){
-		
+		if instance_exists(parent_entity)
+		{
+			with parent_entity
+			{
+				event_user(0);	
+			}
+		}
 	}
 	
 	// Plays the collision even for all entities

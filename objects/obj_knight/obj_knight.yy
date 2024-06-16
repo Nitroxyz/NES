@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_knight",
+    "path":"sprites/spr_knight/spr_knight.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

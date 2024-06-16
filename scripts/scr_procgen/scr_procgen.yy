@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_procgen",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"roguelikestuff",
+    "path":"folders/Scripts/roguelikestuff.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

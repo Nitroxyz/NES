@@ -27,6 +27,11 @@ if (mouse_check_button_pressed(mb_left))
 }
 
 #region Major turn handling
+	
+	switch state
+	{
+		case 0:
+		player_turn();
 	/* Player turn
 	Start with checking player input, when yes:
 	- fast forward
@@ -35,14 +40,16 @@ if (mouse_check_button_pressed(mb_left))
 	- do universal collision event 
 	- update grid
 	*/
-	
+		break;
+		case 2:
+		enemy_turn();
 	/* enemy turn
 	when stage == 2, do enemy turn
 	update grid
 	do universal collision event (keep in mind that enemies cannot take damage here, usually)
 	update grid
 	*/
-	
+		break;
 	/* Animation 
 		During freeze:
 		- Advance all active animations by 1
@@ -53,6 +60,7 @@ if (mouse_check_button_pressed(mb_left))
 				unfreeze();
 			}
 		}
-	*/	
+	*/
+	}
 #endregion
 
