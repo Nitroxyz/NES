@@ -1,5 +1,24 @@
 {
   "FolderOrderSettings":[
+    {"name":"Projectiles","order":3,"path":"folders/Objects/Entities/Projectiles.yy",},
+    {"name":"SpriteData","order":1,"path":"folders/Scripts/SpriteData.yy",},
+    {"name":"Internal","order":1,"path":"folders/Scripts/SpriteData/Internal.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"obj_death","order":1,"path":"objects/obj_death/obj_death.yy",},
+    {"name":"obj_proj_dummy","order":1,"path":"objects/obj_proj_dummy/obj_proj_dummy.yy",},
+    {"name":"parent_projectile","order":1,"path":"objects/parent_projectile/parent_projectile.yy",},
+    {"name":"sys_grid","order":1,"path":"objects/sys_grid/sys_grid.yy",},
+    {"name":"Documentation","order":2,"path":"scripts/Documentation/Documentation.yy",},
+    {"name":"spawn_entity","order":2,"path":"scripts/spawn_entity/spawn_entity.yy",},
+    {"name":"sprite_data_end","order":1,"path":"scripts/sprite_data_end/sprite_data_end.yy",},
+    {"name":"sprite_getpixel","order":3,"path":"scripts/sprite_getpixel/sprite_getpixel.yy",},
+    {"name":"sprite_pragma","order":2,"path":"scripts/sprite_pragma/sprite_pragma.yy",},
+    {"name":"spr_compass","order":1,"path":"sprites/spr_compass/spr_compass.yy",},
+    {"name":"spr_knight_1","order":1,"path":"sprites/spr_knight_1/spr_knight_1.yy",},
+    {"name":"spr_mage_1","order":2,"path":"sprites/spr_mage_1/spr_mage_1.yy",},
+    {"name":"spr_swing","order":1,"path":"sprites/spr_swing/spr_swing.yy",},
+
     {"name":"Enemies","order":5,"path":"folders/Objects/Entities/Enemies.yy",},
     {"name":"roguelikestuff","order":3,"path":"folders/Scripts/roguelikestuff.yy",},
     {"name":"Internal","order":1,"path":"folders/Scripts/roguelikestuff/Internal.yy",},

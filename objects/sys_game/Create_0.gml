@@ -10,6 +10,16 @@
 	#macro FLOOR_H 6
 #endregion
 
+#region input macros (Booleans)
+	#macro UP keyboard_check_pressed(ord("W"))
+	#macro DOWN keyboard_check_pressed(ord("S"))
+	#macro LEFT keyboard_check_pressed(ord("A"))
+	#macro RIGHT keyboard_check_pressed(ord("D"))
+	#macro B keyboard_check_pressed(ord("K"))
+	#macro A keyboard_check_pressed(ord("L"))
+	#macro START keyboard_check_pressed(vk_enter)
+	#macro SELECT keyboard_check_pressed(vk_shift)
+#endregion
 
 randomize();
 
@@ -21,6 +31,8 @@ randomize();
 4 = animation 2+ complete; reset to neutral
 */
 state = 0;
+
+
 
 // All animations which are supposed to stall the game are listed here
 global.busy_anims = ds_list_create();
@@ -59,7 +71,12 @@ input_bible = {};
 	//2d arrays:
 	global.grid_room[0][0] = ds_grid_create(GRID_W,GRID_H); //The tile grid of the current room
 	global.type_room[6][6] = 0;//The type of the current room (normal, boss, treasure, or shop)
-
+	global.room_obj[GRID_W][GRID_H] = 0;
+	for(var i_x = 0; i_x < GRID_W; i_x++){
+		for(var i_y = 0; i_y < GRID_H; i_y++){
+			global.room_obj[i_x][i_y] = instance_create_layer(i_x*TILE_W, i_y*TILE_W, "Instances", sys_grid);
+		}
+	}
 	global.room_x = 0;//coordinates of current room
 	global.room_y = 0;//^^
 
@@ -112,7 +129,8 @@ input_bible = {};
 	}
 #endregion
 
-
+active_player = spawn_entity(obj_knight, 6, 6);
+//spawn_entity(obj_proj_dummy, 7, 7);
 
 #region system functions
 function room_switch(_x, _y, _direction = "null")
