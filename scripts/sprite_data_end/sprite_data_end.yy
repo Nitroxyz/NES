@@ -6,7 +6,7 @@
   "name":"sprite_data_end",
   "parent":{
     "name":"Internal",
-    "path":"folders/Scripts/SpriteData/Internal.yy",
+    "path":"folders/Scripts/roguelikestuff/Internal.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

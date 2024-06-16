@@ -2,8 +2,8 @@
 #region variables
 	// Relative position on the grid.
 	// Note that during animations you arent on it
-	grid_x = 0;
-	grid_y = 0;
+	grid_x = floor(x/TILE_W);
+	grid_y = floor(y/TILE_W);
 
 	// Character state. Neutral is 0
 	state = 0;
@@ -26,7 +26,7 @@
 	*/
 	animation_rule = -1;
 	
-	var grid_tile = global.grid_room[grid_x][grid_y];
+	//var grid_tile = global.grid_room[grid_x][grid_y]; // What is this????????
 #endregion
 
 #region entity functions
@@ -45,15 +45,15 @@
 	// Moving, but more forcefull. Uses a set x/y over a delta
 	// set_coord: when true, moves the x and y as well. Default true
 	move_force = function(vx, vy, set_coord = true){
-		var grid_current = global.grid_room[grid_x][grid_y];
-		grid_current.remove_entity(self);
-		var grid_next = global.grid_room[vx][vy];
-		grid_current.add_entity(self);
+		//var grid_current = global.grid_room[grid_x][grid_y];
+		//grid_current.remove_entity(self);
+		//var grid_next = global.grid_room[vx][vy];
+		//grid_current.add_entity(self);
 		grid_x = vx;
 		grid_y = vy;
 		if(set_coord){
-			// sets the x to the scaled grid_x
-			// sets the y to the scaled grid_y
+			x = grid_x * 16;
+			y = grid_y * 16;
 		}
 	}
 
@@ -75,7 +75,7 @@
 	}
 
 	// Play a custom action animation, usually advances the animation by 1 frame
-	draw_action_step = fucntion(){
+	draw_action_step = function(){
 	}
 
 	// Forcefully snaps you to the grid position you belong on

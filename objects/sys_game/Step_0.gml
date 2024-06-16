@@ -5,6 +5,8 @@
 	}
 #endregion
 
+
+
 var _mouse_grid_x = floor(mouse_x/16);
 var _mouse_grid_y = floor(mouse_y/16);
 
@@ -17,11 +19,19 @@ if (mouse_check_button_pressed(mb_left))
 	var _tile = ds_grid_get(global.grid_room[global.room_x][global.room_y], _mouse_grid_x, _mouse_grid_y);
 	
 	ds_grid_set(global.grid_room[global.room_x][global.room_y],_mouse_grid_x,_mouse_grid_y,!_tile);//sets grid value to opposite of tile
-
-	tilemap_set(room_tiles, ds_grid_get(global.grid_room[global.room_x][global.room_y], _mouse_grid_x, _mouse_grid_y), _mouse_grid_x, _mouse_grid_y);
+	
+	_tile = ds_grid_get(global.grid_room[global.room_x][global.room_y], _mouse_grid_x, _mouse_grid_y);
+	
+	//tilemap_set(room_tiles, _tile, _mouse_grid_x, _mouse_grid_y);
+	procgen_set_tiles(global.grid_room[global.room_x][global.room_y], room_tiles);
 }
 
 #region Major turn handling
+	
+	switch state
+	{
+		case 0:
+		player_turn();
 	/* Player turn
 	Start with checking player input, when yes:
 	- fast forward
@@ -30,14 +40,16 @@ if (mouse_check_button_pressed(mb_left))
 	- do universal collision event 
 	- update grid
 	*/
-	
+		break;
+		case 2:
+		enemy_turn();
 	/* enemy turn
 	when stage == 2, do enemy turn
 	update grid
 	do universal collision event (keep in mind that enemies cannot take damage here, usually)
 	update grid
 	*/
-	
+		break;
 	/* Animation 
 		During freeze:
 		- Advance all active animations by 1
@@ -48,6 +60,7 @@ if (mouse_check_button_pressed(mb_left))
 				unfreeze();
 			}
 		}
-	*/	
+	*/
+	}
 #endregion
 

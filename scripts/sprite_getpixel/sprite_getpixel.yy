@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"sprite_getpixel",
   "parent":{
-    "name":"SpriteData",
-    "path":"folders/Scripts/SpriteData.yy",
+    "name":"roguelikestuff",
+    "path":"folders/Scripts/roguelikestuff.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

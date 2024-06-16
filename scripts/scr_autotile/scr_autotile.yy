@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_autotile",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_autotile",
+  "parent":{
+    "name":"roguelikestuff",
+    "path":"folders/Scripts/roguelikestuff.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
