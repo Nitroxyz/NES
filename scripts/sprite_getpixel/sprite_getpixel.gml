@@ -26,7 +26,7 @@ function sprite_getpixel(_sprite, _subimg, _x, _y) {
     
 	    exists = 1;
     
-	    if (array_length_1d(arr) > _subimg && buffer_exists(arr[_subimg])){
+	    if (array_length(arr) > _subimg && buffer_exists(arr[_subimg])){
 	        exists = 2;
 	    }
 	}

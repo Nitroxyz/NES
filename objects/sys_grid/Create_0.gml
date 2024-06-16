@@ -18,5 +18,5 @@ remove_entity = function(entity){
 
 find_entity = function(entity){
 	var epos = ds_list_find_index(held_entities, entity);
-	return epos > -1
+	return epos
 }

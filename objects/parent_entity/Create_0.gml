@@ -26,7 +26,7 @@
 	*/
 	animation_rule = -1;
 	
-	var grid_tile = global.grid_room[grid_x][grid_y];
+	stun = 0;
 #endregion
 
 #region entity functions
@@ -35,7 +35,6 @@
 	// Note that this is happening before the animation, so the characters real hitbox is already updated, while the animation is "lagging behind"
 	move = function(dx, dy){
 		// Check if the position is taken up
-	
 		// Determine the change in x and y main
 	
 		// Change position
@@ -45,9 +44,9 @@
 	// Moving, but more forcefull. Uses a set x/y over a delta
 	// set_coord: when true, moves the x and y as well. Default true
 	move_force = function(vx, vy, set_coord = true){
-		var grid_current = global.grid_room[grid_x][grid_y];
+		var grid_current = global.room_obj[grid_x][grid_y];
 		grid_current.remove_entity(self);
-		var grid_next = global.grid_room[vx][vy];
+		var grid_next = global.room_obj[vx][vy];
 		grid_current.add_entity(self);
 		grid_x = vx;
 		grid_y = vy;
@@ -75,7 +74,7 @@
 	}
 
 	// Play a custom action animation, usually advances the animation by 1 frame
-	draw_action_step = fucntion(){
+	draw_action_step = function(){
 	}
 
 	// Forcefully snaps you to the grid position you belong on
