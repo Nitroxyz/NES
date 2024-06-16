@@ -2,8 +2,8 @@
 #region variables
 	// Relative position on the grid.
 	// Note that during animations you arent on it
-	grid_x = 0;
-	grid_y = 0;
+	grid_x = floor(x/TILE_W);
+	grid_y = floor(y/TILE_W);
 
 	// Character state. Neutral is 0
 	state = 0;
@@ -26,7 +26,9 @@
 	*/
 	animation_rule = -1;
 	
+
 	stun = 0;
+
 #endregion
 
 #region entity functions
@@ -51,8 +53,8 @@
 		grid_x = vx;
 		grid_y = vy;
 		if(set_coord){
-			// sets the x to the scaled grid_x
-			// sets the y to the scaled grid_y
+			x = grid_x * 16;
+			y = grid_y * 16;
 		}
 	}
 

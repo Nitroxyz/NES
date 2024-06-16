@@ -6,7 +6,7 @@
   "name":"sprite_pragma",
   "parent":{
     "name":"Internal",
-    "path":"folders/Scripts/SpriteData/Internal.yy",
+    "path":"folders/Scripts/roguelikestuff/Internal.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
