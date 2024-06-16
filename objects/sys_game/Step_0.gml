@@ -71,9 +71,7 @@ if (mouse_check_button_pressed(mb_left))
 	update grid
 	*/
 	if(state == 2 and ds_list_size(global.busy_anims) == 0){
-		with(parent_enemy){
-			enemy_turn();
-		}
+		enemy_turn();
 		with(parent_entity){
 			// Plays collision event.
 			event_user(1);

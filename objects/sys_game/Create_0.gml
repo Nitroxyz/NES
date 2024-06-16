@@ -154,7 +154,7 @@ function room_switch(_x, _y, _direction = "null")
 	procgen_set_tiles(global.grid_room[_x][_y],room_tiles);
 }
 	
-	// player turn
+	// player turn OUTDATED DONT USE
 	player_turn = function(){
 		if instance_exists(parent_player)
 		{
@@ -176,12 +176,12 @@ function room_switch(_x, _y, _direction = "null")
 		}
 	}
 	
-	// Plays the collision even for all entities
+	// Plays the collision even for all entities OUTDATE DONT USE
 	collision_event = function(){
 		
 	}
 	
-	// Forcefully plays the end animation events for all entities
+	// Forcefully plays the end animation events for all entities OUTDATED DONT USE
 	end_animation_force = function(){
 		for(var i = 0; i < ds_list_size(global.busy_anims); i++){
 			with(ds_list_find_value(global.busy_anims, i)){
